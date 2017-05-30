@@ -26,6 +26,4 @@ Allow access to application name "Drive API Ruby Quickstart by Szymon"
 
 3. ```MyGoogleDrive`` is the name of implemented Google Drive container when ```client.rb``` is a usage example of that class.
 
-4. 
-
 to be continued ...

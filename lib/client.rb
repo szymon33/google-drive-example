@@ -9,5 +9,5 @@ list.items.each do |file|
   puts "#{file.title} (#{file.id})"
 end
 
-
-drive.upload('Hello World', 'hello.txt')
+folder = drive.find_or_create_folder('reports')
+drive.upload('Hello World', File.expand_path('../files_to_upload/hello.txt'), folder)
