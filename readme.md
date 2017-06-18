@@ -1,4 +1,4 @@
-## Ruby. Google Drive API Ruby Quickstart by Szymon
+## Quickstart of Google Drive with API Ruby by Szymon
 
 ### Introduction
 
@@ -8,7 +8,9 @@
 ### Features:
 
 1. Dispaly list of files
-2. Upload one sample file
+2. Create folder
+3. Finds folder by name
+4. Upload file to a specific folder
 
 ### Implementation notes
 
@@ -24,6 +26,4 @@ https://console.developers.google.com/start/api?id=drive
 
 Allow access to application name "Drive API Ruby Quickstart by Szymon"
 
-3. ```MyGoogleDrive`` is the name of implemented Google Drive container when ```client.rb``` is a usage example of that class.
-
-to be continued ...
+3. ```MyGoogleDrive``` is the name of implemented Google Drive container when ```client.rb``` is a usage example of that class.

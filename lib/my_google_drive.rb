@@ -22,6 +22,7 @@ class MyGoogleDrive
     FileUtils.mkdir_p(File.dirname(CREDENTIALS_PATH))
 
     client_id = Google::Auth::ClientId.from_file(CLIENT_SECRETS_PATH)
+    # client_id = Google::Auth::ClientId.from_hash(Rails.application.config.gdrive_secrets)
     token_store = Google::Auth::Stores::FileTokenStore.new(file: CREDENTIALS_PATH)
     authorizer = Google::Auth::UserAuthorizer.new(
       client_id, SCOPE, token_store
@@ -54,11 +55,11 @@ class MyGoogleDrive
     @service.list_files
   end
 
-  def upload(title, source, folder_id = nil)
+  def upload(title, source, content_type = 'text/plain', folder_id = nil)
     metadata = { title: title }
     metadata[:parents] = [folder_id] if folder_id
     @service.insert_file(metadata, upload_source: source,
-                                   content_type: 'text/plain', options: { retries: 3 })
+                                   content_type: content_type, options: { retries: 3 })
   end
 
   def find_folder(name)
